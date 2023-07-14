@@ -5,6 +5,7 @@ import Card from './Card'
 const ProductItem = ({item}) => {
   return (
     <Card 
+    additionalStyle={styles.additionalStylesCard}
     >
         <Text style={styles.textCategory}>{item.title}</Text>
         <Image 
@@ -24,11 +25,11 @@ const styles = StyleSheet.create({
     width: 100,
     borderRadius: 8,
   },
-  // additionalStylesCard: {
-  //   flexDirection: 'row',
-  //   height: 120,
-  //   justifyContent: 'space-between'
-  // }
+  additionalStylesCard: {
+    flexDirection: 'row',
+    height: 120,
+    justifyContent: 'space-between'
+  }
 })
 
-// additionalStyle={styles.additionalStylesCard}
+// 

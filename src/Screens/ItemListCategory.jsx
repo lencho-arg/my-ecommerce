@@ -5,35 +5,50 @@ import ProductItem from '../Components/ProductItem'
 import { colors } from '../Global/Colors'
 import Search from '../Components/Search'
 
-const ItemListCategory = () => {
+const ItemListCategory = ({
+  category,
+  setCategory
+}) => {
 
-  const [categorySelected, setCategorySelected] = useState("smartphones")
+  const [categorySelected, setCategorySelected] = useState(category)
   const [products, setProducts] = useState([])
   const [keyword, setKeyword] = useState("")
+  const [keywordError, setKeywordError] = useState("")
 
-  useEffect(()=> {
+  useEffect(() => {
     //Lógica de manejo de category
     const productsFiltered = productsRaw.filter(product => product.category === categorySelected && product.title.toLocaleLowerCase().includes(keyword.toLocaleLowerCase()))
     setProducts(productsFiltered)
-    
+
 
   }, [categorySelected, keyword])
 
   const onSearch = (input) => {
-    setKeyword(input)
-  }  
+    const expression = /^[a-zA-Z0-9\ ]*$/
+    const evaluation = expression.test(input)
+
+    if (evaluation) {
+      setKeyword(input)
+      setKeywordError("")
+    } else {
+      setKeywordError("SOLO LETRAS Y NUMEROS")
+    }
+
+  }
 
   return (
     <View style={styles.container}>
-        <Search
-          onSearch={onSearch}
-        />
-        <FlatList
-            data = {products}
-            keyExtractor={product => product.id}
-            renderItem={({item}) => ProductItem({item})}
-            showsVerticalScrollIndicator={false}
-        />
+      <Search
+        onSearch={onSearch}
+        error= {keywordError}
+        goBack={() => setCategory("")}
+      />
+      <FlatList
+        data={products}
+        keyExtractor={product => product.id}
+        renderItem={({ item }) => ProductItem({ item })}
+        showsVerticalScrollIndicator={false}
+      />
     </View>
   )
 }
@@ -41,9 +56,9 @@ const ItemListCategory = () => {
 export default ItemListCategory
 
 const styles = StyleSheet.create({
-    container: {
-        height: '90%',
-        backgroundColor: colors.lightPink,
-        alignItems: 'center'
-    }
+  container: {
+    height: '90%',
+    backgroundColor: colors.claro,
+    alignItems: 'center'
+  }
 })

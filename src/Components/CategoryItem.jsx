@@ -1,22 +1,30 @@
-import { StyleSheet, Text } from 'react-native'
+import { Pressable, StyleSheet, Text } from 'react-native'
 import React from 'react'
-import	Card from '../Components/Card'
+import Card from '../Components/Card'
 import { colors } from '../Global/Colors'
 
 
-const CategoryItem = ({ item }) => {
+const CategoryItem = ({
+    item,
+    setCategorySelected
+}) => {
     return (
-        <Card>
-            <Text style={styles.textCategory}>{item}</Text>
-        </Card>
+        <Pressable
+            onPress={() => setCategorySelected(item)}>
+            <Card>
+                <Text style={styles.textCategory}>{item}</Text>
+            </Card>
+        </Pressable>
+
     )
 }
 
 export default CategoryItem
 
 const styles = StyleSheet.create({
-    textCategory:{
+    textCategory: {
         fontSize: 15,
-        color: colors.white
+        color: colors.white,
+        fontFamily: 'Josefin'
     }
 })

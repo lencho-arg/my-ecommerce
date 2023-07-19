@@ -7,7 +7,8 @@ import Search from '../Components/Search'
 
 const ItemListCategory = ({
   category,
-  setCategory
+  setCategory,
+  setProductSelected
 }) => {
 
   const [categorySelected, setCategorySelected] = useState(category)
@@ -40,13 +41,17 @@ const ItemListCategory = ({
     <View style={styles.container}>
       <Search
         onSearch={onSearch}
-        error= {keywordError}
+        error={keywordError}
         goBack={() => setCategory("")}
       />
       <FlatList
         data={products}
         keyExtractor={product => product.id}
-        renderItem={({ item }) => ProductItem({ item })}
+        renderItem={({ item }) => <ProductItem 
+        item={item} 
+        setProductSelected={setProductSelected}
+        setCategorySelected={setCategory}
+        />}
         showsVerticalScrollIndicator={false}
       />
     </View>

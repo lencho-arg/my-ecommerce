@@ -6,12 +6,12 @@ import { colors } from '../Global/Colors'
 
 const CategoryItem = ({
     item,
-    setCategorySelected
+    navigation
 }) => {
     return (
         <Pressable
-            onPress={() => setCategorySelected(item)}>
-            <Card>
+            onPress={() => navigation.navigate('ItemListCategory', {category: item})}>
+            <Card additionalStyle={styles.border}>
                 <Text style={styles.textCategory}>{item}</Text>
             </Card>
         </Pressable>
@@ -26,5 +26,8 @@ const styles = StyleSheet.create({
         fontSize: 15,
         color: colors.white,
         fontFamily: 'Josefin'
+    },
+    border: {
+        borderRadius: 15
     }
 })

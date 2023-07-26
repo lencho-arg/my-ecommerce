@@ -37,16 +37,20 @@ export default ProductItem;
 
 const styles = StyleSheet.create({
     image: {
-        height: 120,
-        width: "40%",
+        height: 100,
+        width: '40%',
+        
         minWidth: 150,
         maxWidth: 250,
-        borderRadius: 8,
+        borderRadius: 15,
+
     },
     additionalStylesCard: {
         flexDirection: "row",
         height: 120,
         justifyContent: "space-between",
+        padding: 8
+
     },
     textCategory: {
         width: "50%",

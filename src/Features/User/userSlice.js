@@ -6,7 +6,9 @@ export const userSlice = createSlice({
     initialState: {
         value: {
             email: "",
-            idToken: ""
+            idToken: "",
+            localId: "",
+            profileImage: ""
         }
     },
     reducers: {
@@ -16,12 +18,17 @@ export const userSlice = createSlice({
         signOut: (state) => {
             state.value = {
                 email: "",
-                idToken: ""
+                idToken: "",
+                localId: "",
+                profileImage: ""
             }
+        },
+        saveImage: (state, action) => {
+            state.value.profileImage = action.payload
         }
     }
 })
 
-export const { setUser, logOut, signOut} = userSlice.actions
+export const { setUser, logOut, signOut, saveImage} = userSlice.actions
 
 export default userSlice.reducer

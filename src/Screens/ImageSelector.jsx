@@ -1,19 +1,21 @@
 import React, { useState } from "react";
 import { Image, View, StyleSheet, Text } from "react-native";
-import * as ImagePicker from "expo-image-picker";
 import AddButton from "../Components/AddButton";
 import { colors } from "../Global/Colors";
 import * as MediaLibrary from "expo-media-library";
 import { usePostProfileImageMutation } from "../Services/shopServices";
 import { useDispatch, useSelector } from "react-redux";
 import { saveImage } from "../Features/User/userSlice";
+import * as ImagePicker from "expo-image-picker";
 
 const ImageSelector = ({ navigation }) => {
     const [image, setImage] = useState(null);
 
-    const [triggerSaveImage, resultSaveImage] = usePostProfileImageMutation();
-    const dispatch = useDispatch();
-    const { localId } = useSelector((state) => state.userReducer.value);
+    const dispatch = useDispatch()
+
+    // const [triggerSaveImage, resultSaveImage] = usePostProfileImageMutation();
+    // const dispatch = useDispatch();
+    // const { localId } = useSelector((state) => state.userReducer.value);
 
     const verifyCameraPermissions = async () => {
         const { granted } = await ImagePicker.requestCameraPermissionsAsync();
@@ -38,7 +40,7 @@ const ImageSelector = ({ navigation }) => {
                 quality: 1,
             });
 
-            console.log(result.assets);
+            // console.log(result.assets);
 
             if (!result.canceled) {
                 setImage(result.assets[0].uri);
@@ -47,26 +49,28 @@ const ImageSelector = ({ navigation }) => {
     };
 
     const confirmImage = async () => {
-        try {
-            // Request device storage access permission
-            const { status } = await MediaLibrary.requestPermissionsAsync();
-            if (status === "granted") {
-                console.log("Only valid on emulators and physical devices");
-                // Save image to media library and create an asset
-                const response = await MediaLibrary.createAssetAsync(image);
-                console.log(response.uri);
-                //Save image link on profileImages remote location
-                triggerSaveImage({
-                    image: response.uri,
-                    localId: localId,
-                });
-                // Set image on redux state
-                dispatch(saveImage(response.uri));
-            }
-        } catch (error) {
-            console.log(error);
-        }
-        navigation.goBack();
+        dispatch(saveImage(image))
+        navigation.goBack()
+        // try {
+        //     // Request device storage access permission
+        //     const { status } = await MediaLibrary.requestPermissionsAsync();
+        //     if (status === "granted") {
+        //         console.log("Only valid on emulators and physical devices");
+        //         // Save image to media library and create an asset
+        //         const response = await MediaLibrary.createAssetAsync(image);
+        //         console.log(response.uri);
+        //         //Save image link on profileImages remote location
+        //         triggerSaveImage({
+        //             image: response.uri,
+        //             localId: localId,
+        //         });
+        //         // Set image on redux state
+        //         dispatch(saveImage(response.uri));
+        //     }
+        // } catch (error) {
+        //     console.log(error);
+        // }
+        // navigation.goBack();
     };
 
     return (

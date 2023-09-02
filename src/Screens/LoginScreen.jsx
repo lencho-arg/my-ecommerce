@@ -53,6 +53,14 @@ const LoginScreen = ({ navigation }) => {
     return (
         <View style={styles.main}>
 
+        <View>
+            <Image 
+                source={{ uri: "https://imgur.com/haA3NHd.jpg"}}
+                style={styles.imageBackground}
+                resizeMode="contain"
+            />
+        </View>
+
             <View style={styles.container}>
                 <Text style={styles.title}>Login to start</Text>
                 <InputForm
@@ -90,7 +98,8 @@ const styles = StyleSheet.create({
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
-        backgroundColor: colors.lightPink,
+        backgroundColor: colors.claro,
+        opacity: 0.8,
         gap: 15,
         paddingVertical: 20,
         borderRadius: 10,
@@ -107,4 +116,13 @@ const styles = StyleSheet.create({
         fontSize: 14,
         color: "blue",
     },
+    imageBackground: {
+        position: 'absolute',
+        backgroundColor: colors.celeste,
+        opacity: 0.9,
+        top: -200,
+        left: -360,
+        width: 750,
+        height: 740,
+    }
 });

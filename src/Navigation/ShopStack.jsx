@@ -21,7 +21,7 @@ const ShopStack = () => {
         >
             <Stack.Screen name="BAmos" component={Home} />
             <Stack.Screen
-                name="ItemListCategory"
+                name="Tu Lista"
                 component={ItemListCategory}
             />
             <Stack.Screen name="Detalle" component={ItemDetail} />

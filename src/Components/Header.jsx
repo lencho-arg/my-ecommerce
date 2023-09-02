@@ -12,7 +12,7 @@ const Header = ({ route, navigation }) => {
     if (route.name === 'BAmos') title = "BAmos"
     if (route.name === 'Signup') title = "Registrate"
     if (route.name === 'Login') title = 'Ingresa'
-    if (route.name === 'ItemListCategory') title = route.params.category
+    if (route.name === 'Tu Lista') title = 'Tu Lista'
     if (route.name === 'Detalle') title = 'Detalle'
     if (route.name === 'Tu Carrito') title = 'Tu Carrito'
     if (route.name === 'OrderScreen') title = 'Ordenes'

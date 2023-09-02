@@ -7,6 +7,9 @@ import Search from '../Components/Search'
 import { useSelector } from 'react-redux'
 import { useGetProductsByCategoryQuery } from '../Services/shopServices'
 
+import { Fontisto } from '@expo/vector-icons'; 
+
+
 const ItemListCategory = ({
   navigation,
   route
@@ -70,7 +73,7 @@ export default ItemListCategory
 
 const styles = StyleSheet.create({
   container: {
-    height: '90%',
+    height: '83%',
     backgroundColor: colors.claro,
     alignItems: 'center'
   }

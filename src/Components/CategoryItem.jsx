@@ -14,7 +14,7 @@ const CategoryItem = ({
 
     const onSelectCategory =() => {
         dispatch(setCategorySelected(item))
-        navigation.navigate('ItemListCategory', {category:item})
+        navigation.navigate('Tu Lista', {category:item})
     }
 
     return (
@@ -32,11 +32,13 @@ export default CategoryItem
 
 const styles = StyleSheet.create({
     textCategory: {
-        fontSize: 15,
+        fontSize: 20,
         color: colors.white,
         fontFamily: 'Josefin'
     },
     border: {
-        borderRadius: 15
+        borderRadius: 25,
+        width: 200,
+
     }
 })

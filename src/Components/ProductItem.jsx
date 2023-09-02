@@ -43,15 +43,16 @@ const styles = StyleSheet.create({
         
         minWidth: 150,
         maxWidth: 250,
-        borderRadius: 15,
+        borderRadius: 20,
+        right: 15
 
     },
     additionalStylesCard: {
         flexDirection: "row",
-        height: 120,
+        height: 115,
         justifyContent: "space-between",
-        padding: 8
-
+        padding: 8,
+        borderRadius: 20,
     },
     textCategory: {
         width: "50%",

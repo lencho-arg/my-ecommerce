@@ -1,4 +1,4 @@
-import { Pressable, StyleSheet, Text, View } from "react-native";
+import { Pressable, StyleSheet, Text, View, Image } from "react-native";
 import React, { useEffect, useState } from "react";
 import InputForm from "../Components/InputForm";
 import SubmitButton from "../Components/SubmitButton";
@@ -66,7 +66,17 @@ const SignupScreen = ({ navigation }) => {
     };
 
     return (
+        
         <View style={styles.main}>
+
+        <View>
+            <Image 
+                source={{ uri: "https://imgur.com/haA3NHd.jpg"}}
+                style={styles.imageBackground}
+                resizeMode="contain"
+            />
+        </View>
+
             <View style={styles.container}>
                 <Text style={styles.title}>Signup</Text>
                 <InputForm label={"email"} onChange={setEmail} error={errorMail} />
@@ -77,7 +87,7 @@ const SignupScreen = ({ navigation }) => {
                     isSecure={true}
                 />
                 <InputForm
-                    label={"confirm password"}
+                    label={"confirmar password"}
                     onChange={setconfirmPassword}
                     error={errorConfirmPassword}
                     isSecure={true}
@@ -106,7 +116,8 @@ const styles = StyleSheet.create({
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
-        backgroundColor: colors.lightPink,
+        backgroundColor: colors.claro,
+        opacity: 0.8,
         gap: 15,
         paddingVertical: 20,
         borderRadius: 10,
@@ -125,4 +136,13 @@ const styles = StyleSheet.create({
         fontFamily: "Josefin",
         color: "blue",
     },
+    imageBackground: {
+        position: 'absolute',
+        backgroundColor: colors.celeste,
+        opacity: 0.9,
+        top: -200,
+        left: -360,
+        width: 750,
+        height: 740,
+    }
 });

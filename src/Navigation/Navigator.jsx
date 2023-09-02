@@ -39,7 +39,6 @@ const Navigator = () => {
                     component={ShopStack}
                     options={{
                         tabBarIcon: ({focused}) => {
-                            // console.log(focused);
                             return (
                                 <View>
                                     <Fontisto name="shopping-store" size={24} color={focused ? "black": "white"} />

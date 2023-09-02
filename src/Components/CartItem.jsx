@@ -1,4 +1,4 @@
-import { Pressable, StyleSheet, Text, View } from "react-native";
+import { Pressable, StyleSheet, Text, View, Image } from "react-native";
 import React from "react";
 import { colors } from "../Global/Colors";
 import { Entypo } from "@expo/vector-icons";
@@ -7,7 +7,6 @@ import { removeCartItem } from "../Features/Cart/cartSlice";
 
 const CartItem = ({ cartItem }) => {
 
-    // "smartphones",
     const dispatch = useDispatch()
 
     const onRemoveCartItem = () => {
@@ -16,6 +15,11 @@ const CartItem = ({ cartItem }) => {
     return (
         <View style={styles.card} onPress={() => {}}>
             <View style={styles.textContainer}>
+                        {/* <Image
+                        source={{ uri: product.images[0] }}
+                        style={orientation === "portrait" ? styles.image : styles.imageLandscape}
+                        resizeMode="cover"
+                        /> */}
                 <Text style={styles.text}>{cartItem.title} ({cartItem.quantity})</Text>
                 <Text style={styles.text2}>{cartItem.brand}</Text>
                 <Text style={styles.text2}>${cartItem.price}</Text>

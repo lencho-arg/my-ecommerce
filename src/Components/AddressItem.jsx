@@ -1,38 +1,36 @@
 import { Pressable, StyleSheet, Text, View } from "react-native";
+import { Entypo } from "@expo/vector-icons";
 import React from "react";
 import { colors } from "../Global/Colors";
-import { Entypo } from "@expo/vector-icons";
-import { useDispatch } from "react-redux";
-import { removeCartItem } from "../Features/Cart/cartSlice";
 
-const CartItem = ({ cartItem }) => {
+const AddressItem = ({ location, navigation }) => {
 
-    // "smartphones",
-    const dispatch = useDispatch()
-
-    const onRemoveCartItem = () => {
-        dispatch(removeCartItem(cartItem.id))
+    const onChangeLocation = () => {
+        navigation.navigate('Location Selector')
     }
+
     return (
         <View style={styles.card} onPress={() => {}}>
             <View style={styles.textContainer}>
-                <Text style={styles.text}>{cartItem.title} ({cartItem.quantity})</Text>
-                <Text style={styles.text2}>{cartItem.brand}</Text>
-                <Text style={styles.text2}>${cartItem.price}</Text>
+                <Text style={styles.text}>
+                    {location.address}
+                </Text>
             </View>
-            <Pressable onPress={onRemoveCartItem}>
-                <Entypo name="trash" size={30} color="black" />
-            </ Pressable>
+            <Pressable onPress={onChangeLocation}>
+                <Entypo name="location" size={30} color="black">
+                    <Text style={styles.text2}>Change</Text>
+                </Entypo>
+            </Pressable>
         </View>
     );
 };
 
-export default CartItem;
+export default AddressItem;
 
 const styles = StyleSheet.create({
     card: {
         height: 100,
-        backgroundColor: colors.celeste,
+        backgroundColor: colors.red,
         padding: 10,
         margin: 10,
         borderWidth: 2,
@@ -42,7 +40,6 @@ const styles = StyleSheet.create({
         alignItems: "center",
     },
     textContainer: {
-
         width: "70%",
         flexDirection: "column",
         justifyContent: "flex-start",
@@ -50,11 +47,12 @@ const styles = StyleSheet.create({
     },
     text: {
         fontFamily: "Josefin",
-        fontSize: 19,
-        color: colors.white,
+        fontSize: 17,
+        color: "black",
     },
     text2: {
         fontFamily: "Josefin",
-        fontSize: 14,
+        fontSize: 19,
+        color: colors.pink,
     },
 });

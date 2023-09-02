@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import allProducts from "../Data/products.json";
 import { useDispatch } from "react-redux";
 import { addCartItem } from "../Features/Cart/cartSlice"
+import { colors } from "../Global/Colors";
 
 const ItemDetail = ({ 
   navigation,
@@ -40,8 +41,8 @@ const ItemDetail = ({
     
     return (
       <View>
-            <Button onPress={() => navigation.goBack()} title="Go back" />
-            <Button onPress={() => navigation.navigate('Home')} title="Home" />
+            {/* <Button onPress={() => navigation.goBack()} title="Go back" /> */}
+            {/* <Button onPress={() => navigation.navigate('Home')} title="Home" /> */}
 
             {product ? (
               <View style={orientation === "portrait" ? styles.mainContainer : styles.mainContainerLandscape} >
@@ -51,12 +52,19 @@ const ItemDetail = ({
                         resizeMode="cover"
                         />
                     <View style = {styles.textContainer}>
-                      <Text>{product.title}</Text>
-                      <Text>{product.description}</Text>
-                      <Text>${product.price}</Text>
-                      <Button title="Add cart"
+                      <Text style = {styles.textContainer}>{product.title}</Text>
+                      <Text style = {styles.textContainer}>{product.description}</Text>
+                      <Text style = {styles.textContainer}>${product.price}</Text>
+                      
+                      <Pressable
+                        onPress={onAddCart}>
+                        <Text style={styles.btn}>Comprar</Text>
+                      </Pressable>
+                      
+                      {/* <Button 
+                        title="Add cart"
                         onPress={onAddCart}
-                      ></Button>
+                      ></Button> */}
                     </View>
                 </View>
             ) : null}
@@ -87,24 +95,23 @@ const styles = StyleSheet.create({
       width: 200,
       height: 200,
       marginRight: 20
-    },
-    textContainer: {
-    flexDirection: 'column'
+  },
+  textContainer: {
+      flexDirection: 'column',
+      fontSize: 23,
+      fontFamily: "Josefin",
+      color: colors.blue
+  },
+  btn: {
+    backgroundColor: colors.blue,
+        borderRadius: 20,
+        borderBottomWidth: 3.5,
+        borderRightWidth: 3.5,
+        borderColor: colors.blue,
+        fontFamily: "Josefin",
+        fontSize: 23,
+        color: "white",
+        paddingLeft: 25,
+        paddingRight: 25
   }
 });
-
-
-      // import { StyleSheet, Text, View } from 'react-native'
-      // import React from 'react'
-      
-      // const ItemDatail = () => {
-      //   return (
-      //     <View>
-      //       <Text>ItemDatail</Text>
-      //     </View>
-      //   )
-      // }
-      
-      // export default ItemDatail
-      
-      // const styles = StyleSheet.create({})

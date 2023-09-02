@@ -19,12 +19,12 @@ const ShopStack = () => {
                 },
             })}
         >
-            <Stack.Screen name="Home" component={Home} />
+            <Stack.Screen name="BAmos" component={Home} />
             <Stack.Screen
                 name="ItemListCategory"
                 component={ItemListCategory}
             />
-            <Stack.Screen name="Detail" component={ItemDetail} />
+            <Stack.Screen name="Detalle" component={ItemDetail} />
         </Stack.Navigator>
     );
 };

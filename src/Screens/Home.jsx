@@ -14,7 +14,7 @@ const Home = ({
     return (
 
         <View style={styles.container}>
-            <Counter/>
+            {/* <Counter/> */}
             <FlatList
                 data={categories}
                 keyExtractor={category => category}

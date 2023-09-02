@@ -3,6 +3,7 @@ import React from 'react'
 import CartData from '../Data/cart.json'
 import CartItem from '../Components/CartItem'
 import { current } from '@reduxjs/toolkit'
+import { colors } from '../Global/Colors'
 import { useSelector } from 'react-redux'
 import { usePostCartMutation } from '../Services/shopServices'
 
@@ -14,7 +15,7 @@ const Cart = () => {
     const [triggerPostCart, result] = usePostCartMutation()
 
     const onConfirm = () => {
-        triggerPostCart({CartData, total, user, updateAt})
+        triggerPostCart({items: CartData, total, user, updateAt})
     }
 
   return (
@@ -33,9 +34,9 @@ const Cart = () => {
             <Pressable
                 onPress={onConfirm}
             >
-                <Text>Confirm</Text>
+                <Text style={styles.btnConfirm}>Confirmar</Text>
             </Pressable>
-            <Text>Total: ${total}</Text>
+            <Text style={styles.textConfirm}>Total: ${total}</Text>
         </View>
     </View>
   )
@@ -53,5 +54,26 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center'
-    }
+    },
+    btnConfirm: {
+        backgroundColor: colors.blue,
+        borderRadius: 20,
+        borderBottomWidth: 3.5,
+        borderRightWidth: 3.5,
+        borderColor: colors.blue,
+        fontFamily: "Josefin",
+        fontSize: 23,
+        color: "white",
+        paddingLeft: 25,
+        paddingRight: 25
+    },
+    textConfirm: {
+        backgroundColor: colors.celeste,
+        borderRadius: 25,
+        fontFamily: "Josefin",
+        fontSize: 23,
+        color: "white",
+        paddingLeft: 25,
+        paddingRight: 25
+      }
 })

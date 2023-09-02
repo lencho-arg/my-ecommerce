@@ -9,12 +9,12 @@ import { signOut } from "../Features/User/userSlice";
 
 const Header = ({ route, navigation }) => {
     let title
-    if (route.name === 'Home') title = "Welcome"
+    if (route.name === 'BAmos') title = "BAmos"
     if (route.name === 'Signup') title = "Registrate"
     if (route.name === 'Login') title = 'Ingresa'
     if (route.name === 'ItemListCategory') title = route.params.category
-    if (route.name === 'Detail') title = route.params.title
-    if (route.name === 'CartScreen') title = 'Tu carrito'
+    if (route.name === 'Detalle') title = 'Detalle'
+    if (route.name === 'Tu Carrito') title = 'Tu Carrito'
     if (route.name === 'OrderScreen') title = 'Ordenes'
     else title = route.name
 

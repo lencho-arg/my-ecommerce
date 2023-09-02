@@ -1,4 +1,4 @@
-import { Pressable, StyleSheet, Text, View } from "react-native";
+import { Pressable, StyleSheet, Text, View, Image } from "react-native";
 import React, { useEffect, useState } from "react";
 import InputForm from "../Components/InputForm";
 import SubmitButton from "../Components/SubmitButton";
@@ -38,18 +38,21 @@ const LoginScreen = ({ navigation }) => {
         else setErrorPassword('')
     };
 
-    console.log(resultSignIn);
+    // console.log(resultSignIn);
+    
     useEffect(()=> {
         if(resultSignIn.isSuccess) {
             dispatch(setUser({
                 email: resultSignIn.data.email,
-                idToken: resultSignIn.data.idToken
+                idToken: resultSignIn.data.idToken,
+                localId: resultSignIn.data.localId,
             }))
         }
     }, [resultSignIn])
 
     return (
         <View style={styles.main}>
+
             <View style={styles.container}>
                 <Text style={styles.title}>Login to start</Text>
                 <InputForm

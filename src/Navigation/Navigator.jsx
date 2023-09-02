@@ -87,7 +87,7 @@ const Navigator = () => {
                                             color={
                                                 focused
                                                     ? 'black'
-                                                    : 'gray'
+                                                    : 'white'
                                             }
                                         />
                                     </View>

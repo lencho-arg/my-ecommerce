@@ -1,6 +1,7 @@
 import { Image, Pressable, StyleSheet, Text, useWindowDimensions } from "react-native";
 import React from "react";
 import Card from "./Card";
+import { colors } from "../Global/Colors";
 
 const ProductItem = ({ 
     item,
@@ -9,7 +10,7 @@ const ProductItem = ({
     const { height, width } = useWindowDimensions();
 
     const onSelect = (id) => {
-        navigation.navigate('Detail', {productId: item.id})
+        navigation.navigate('Detalle', {productId: item.id})
     }
 
     return (
@@ -54,10 +55,14 @@ const styles = StyleSheet.create({
     },
     textCategory: {
         width: "50%",
-        fontSize: 22,
+        fontSize: 20,
+        fontFamily: "Josefin",
+        color: colors.white,
     },
     textCategorySm: {
         width: "50%",
-        fontSize: 15,
+        fontSize: 17,
+        fontFamily: "Josefin",
+        color: colors.white,
     },
 });

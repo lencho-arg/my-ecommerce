@@ -1,14 +1,17 @@
 
-import { Button, Image, Pressable, StyleSheet, Text, View, useWindowDimensions } from "react-native";
+import { Image, Pressable, StyleSheet, Text, View, useWindowDimensions } from "react-native";
 import React, { useEffect, useState } from "react";
 import allProducts from "../Data/products.json";
 import { useDispatch } from "react-redux";
 import { addCartItem } from "../Features/Cart/cartSlice"
 import { colors } from "../Global/Colors";
+import AddButton from "../Components/AddButton";
+
+
 
 const ItemDetail = ({ 
   navigation,
-  route
+  route,
  }) => {
 
     const {productId: idSelected} = route.params
@@ -25,7 +28,6 @@ const ItemDetail = ({
     }, [width, height])
 
     useEffect(() => {
-        //Encontrar el producto por su id
         const productSelected = allProducts.find(
             (product) => product.id === idSelected
         );
@@ -41,8 +43,6 @@ const ItemDetail = ({
     
     return (
       <View>
-            {/* <Button onPress={() => navigation.goBack()} title="Go back" /> */}
-            {/* <Button onPress={() => navigation.navigate('Home')} title="Home" /> */}
 
             {product ? (
               <View style={orientation === "portrait" ? styles.mainContainer : styles.mainContainerLandscape} >
@@ -51,7 +51,7 @@ const ItemDetail = ({
                         style={orientation === "portrait" ? styles.image : styles.imageLandscape}
                         resizeMode="cover"
                         />
-                    <View style = {styles.textContainer}>
+                    <View style = {styles.textContainerCard}>
                       <Text style = {styles.textContainer}>{product.title}</Text>
                       <Text style = {styles.textContainer}>{product.description}</Text>
                       <Text style = {styles.textContainer}>${product.price}</Text>
@@ -60,11 +60,9 @@ const ItemDetail = ({
                         onPress={onAddCart}>
                         <Text style={styles.btn}>Comprar</Text>
                       </Pressable>
-                      
-                      {/* <Button 
-                        title="Add cart"
-                        onPress={onAddCart}
-                      ></Button> */}
+
+                      <AddButton title="hola" />
+                            
                     </View>
                 </View>
             ) : null}
@@ -76,10 +74,13 @@ export default ItemDetail;
 
 const styles = StyleSheet.create({
   mainContainer: {
+    borderRadius: 50,
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
-    padding: 5,
+    padding: 60,
+    margin: 7,
+    backgroundColor: colors.gris
   },
   mainContainerLandscape: {
     flexDirection: "row",
@@ -90,20 +91,30 @@ const styles = StyleSheet.create({
   image: {
     width: 300,
     height: 250,
+    borderRadius: 50
   },
   imageLandscape: {
       width: 200,
       height: 200,
       marginRight: 20
   },
+  textContainerCard: {
+  //     borderColor: colors.celeste,
+  //     padding: 15,
+      marginTop: 10,
+  //     borderRadius: 15,
+  //     borderBottomWidth: 3.5,
+  //       borderRightWidth: 3.5,
+  },
   textContainer: {
       flexDirection: 'column',
       fontSize: 23,
       fontFamily: "Josefin",
-      color: colors.blue
+      color: colors.blue,
+      
   },
   btn: {
-    backgroundColor: colors.blue,
+    backgroundColor: colors.celeste,
         borderRadius: 20,
         borderBottomWidth: 3.5,
         borderRightWidth: 3.5,
@@ -112,6 +123,8 @@ const styles = StyleSheet.create({
         fontSize: 23,
         color: "white",
         paddingLeft: 25,
-        paddingRight: 25
+        paddingRight: 25,
+        marginTop: 5,
+        textAlign:'center'
   }
 });

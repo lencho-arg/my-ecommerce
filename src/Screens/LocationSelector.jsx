@@ -20,10 +20,6 @@ const LocationSelector = ({ navigation }) => {
     const {localId} = useSelector(state => state.userReducer.value)
     const dispatch = useDispatch()
 
-    // const [triggerPostAddress, result] = usePostUserLocationMutation();
-
-    // console.log(localId);
-
     const onConfirmAddress = () => {
 
         const locationFormatted ={
@@ -43,14 +39,6 @@ const LocationSelector = ({ navigation }) => {
 
         navigation.goBack()
 
-        /* const locationFormatted = {
-            latitude: location.latitude,
-            longitude: location.longitude,
-            address: address
-        }
-        dispatch(setUserLocation(locationFormatted))
-        
-        triggerPostAddress({location: locationFormatted, localId}) */
     }
     
     //Location requested on mount

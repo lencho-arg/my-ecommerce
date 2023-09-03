@@ -1,13 +1,23 @@
+import { useEffect } from 'react';
 import { useFonts } from 'expo-font'
-import Navigator from './src/Navigation/Navigator';
 import { Provider } from 'react-redux';
+
+import Navigator from './src/Navigation/Navigator';
 import Store from './src/Store/store'
+import { init } from './src/SQLite';
+import { font } from './src/Assets/Fonts/index';
 
 export default function App() {
 
-  const [fontsLoaded] = useFonts({
-    'Josefin': require('./src/Assets/Fonts/JosefinSans/JosefinSans-SemiBoldItalic.ttf')
-  });
+  useEffect(()=> {
+    init()
+      .then((result)=> {
+      })
+      .catch(err => {
+    })
+  }, [])
+
+  const [fontsLoaded] = useFonts(font);
 
   if (!fontsLoaded) {
     return null;

@@ -12,16 +12,41 @@ import { Fontisto, Ionicons } from '@expo/vector-icons';
 import { Foundation } from '@expo/vector-icons';
 import { FontAwesome5 } from '@expo/vector-icons';
 import OrderStack from './OrderStack'
-// import OrderStack from './OrderStack'
 import AuthStack from './AuthStack'
-import { useSelector } from 'react-redux'
+
 import MyProfileStack from './MyProfileStack'
+import { getSession } from '../SQLite'
+import { setUser } from '../Features/User/userSlice'
+
+import { useDispatch, useSelector } from 'react-redux'
+import { useEffect } from "react";
 
 const Tab = createBottomTabNavigator()
 
 const Navigator = () => {
+        
+        
+    const dispatch = useDispatch();
 
-    const {email} = useSelector(state => state.userReducer.value)
+    //Get stored sessions
+    useEffect(()=> {
+        (async ()=> {
+            try {
+                const session = await getSession()
+                if (session?.rows.length) {
+                    const user = session.rows._array[0]
+                    dispatch(setUser(user))
+                }
+            } catch (error) {
+                console.log('Error getting session');
+                console.log(error.message);
+            }
+        })()
+    }, [])
+
+    const {email} = useSelector(state => state.userReducer.value);
+
+
   return (
     <SafeAreaView style = {styles.container}>
         <NavigationContainer>

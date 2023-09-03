@@ -1,16 +1,15 @@
 import { Pressable, StyleSheet, Text, View, Image } from "react-native";
 import React, { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+
 import InputForm from "../Components/InputForm";
 import SubmitButton from "../Components/SubmitButton";
+
 import { colors } from "../Global/Colors";
-import { useSignUpMutation } from "../Services/authServices";
-import { useDispatch } from "react-redux";
 import { setUser } from "../Features/User/userSlice";
+import { useSignUpMutation } from "../Services/authServices";
 import { isAtLeastSixCharacters, isValidEmail } from "../Validations/auth";
-/* import { useSignUpMutation } from "../services/authService";
-import { useDispatch } from "react-redux";
-import { setUser } from "../features/auth/authSlice";
-import { signupSchema } from "../validations/singupSchema"; */
+
 
 const SignupScreen = ({ navigation }) => {
     const [email, setEmail] = useState("");
@@ -23,7 +22,6 @@ const SignupScreen = ({ navigation }) => {
     const [triggerSignUp, result] = useSignUpMutation()
     const dispatch = useDispatch()
 
-    // console.log(result);
 
     useEffect(()=> {
         if (result.isSuccess) {
@@ -38,7 +36,7 @@ const SignupScreen = ({ navigation }) => {
 
     const onSubmit = () => {
         try {
-            //Submit logic with validations
+
             const isValidVariableEmail = isValidEmail(email)
             const isCorrectPassword = isAtLeastSixCharacters(password)
             const isRepeatedPasswordCorrect = password === confirmPassword
@@ -60,8 +58,6 @@ const SignupScreen = ({ navigation }) => {
             else setErrorConfirmPassword('')
 
         } catch (err) {
-            // console.log("Catch error");
-            // console.log(err.message);
         }
     };
 

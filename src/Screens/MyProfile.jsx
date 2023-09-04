@@ -41,8 +41,8 @@ const MyProfile = ({navigation}) => {
                     resizeMode="cover"
                 />
             )} 
-            <AddButton onPress={launchCamera} title="Add profile picture" />
-            <AddButton onPress={launchLocation} title="Add address" />
+            <AddButton onPress={launchCamera} title="Agregar foto de Perfil" />
+            <AddButton onPress={launchLocation} title="Mi Dirección" />
         </View>
     );
 };

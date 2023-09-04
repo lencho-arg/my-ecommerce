@@ -1,34 +1,30 @@
-import { Platform, Pressable, SafeAreaView, StyleSheet, Text, View } from 'react-native'
+import { Platform, SafeAreaView, StyleSheet, View } from 'react-native'
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { NavigationContainer } from '@react-navigation/native'
+import { useDispatch, useSelector } from 'react-redux'
+import { StatusBar } from 'react-native'
+import { useEffect } from "react";
 import React from 'react'
 
-import { NavigationContainer } from '@react-navigation/native'
-import { StatusBar } from 'react-native'
+import { Foundation, FontAwesome5, Fontisto, Ionicons } from '@expo/vector-icons';
+import { colors } from '../Global/Colors'
+
 import ShopStack from './ShopStack'
 import CartStack from './CartStack'
-
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { colors } from '../Global/Colors'
-import { Fontisto, Ionicons } from '@expo/vector-icons';
-import { Foundation } from '@expo/vector-icons';
-import { FontAwesome5 } from '@expo/vector-icons';
-import OrderStack from './OrderStack'
 import AuthStack from './AuthStack'
-
+import OrderStack from './OrderStack'
 import MyProfileStack from './MyProfileStack'
+
 import { getSession } from '../SQLite'
 import { setUser } from '../Features/User/userSlice'
 
-import { useDispatch, useSelector } from 'react-redux'
-import { useEffect } from "react";
 
 const Tab = createBottomTabNavigator()
 
 const Navigator = () => {
         
-        
     const dispatch = useDispatch();
 
-    //Get stored sessions
     useEffect(()=> {
         (async ()=> {
             try {
@@ -38,14 +34,11 @@ const Navigator = () => {
                     dispatch(setUser(user))
                 }
             } catch (error) {
-                console.log('Error getting session');
-                console.log(error.message);
             }
         })()
     }, [])
 
     const {email} = useSelector(state => state.userReducer.value);
-
 
   return (
     <SafeAreaView style = {styles.container}>
@@ -66,7 +59,7 @@ const Navigator = () => {
                         tabBarIcon: ({focused}) => {
                             return (
                                 <View>
-                                    <Fontisto name="shopping-store" size={24} color={focused ? "black": "white"} />
+                                    <Fontisto name="shopping-store" size={24} color={focused ? colors.gris: "white"} />
                                 </View>
                             )
                         }
@@ -79,7 +72,7 @@ const Navigator = () => {
                         tabBarIcon: ({focused}) => {
                             return (
                                 <View>
-                                    <Foundation name="shopping-cart" size={30} color={focused ? "black": "white"} />    
+                                    <Foundation name="shopping-cart" size={30} color={focused ? colors.gris: "white"} />    
                                 </View>
                             )
                         }
@@ -92,7 +85,7 @@ const Navigator = () => {
                         tabBarIcon: ({focused}) => {
                             return (
                                 <View>
-                                    <FontAwesome5 name="list-ul" size={24} color={focused ? "black": "white"} />
+                                    <FontAwesome5 name="list-ul" size={24} color={focused ? colors.gris: "white"} />
                                 </View>
                             )
                         }
@@ -110,7 +103,7 @@ const Navigator = () => {
                                             size={24}
                                             color={
                                                 focused
-                                                    ? 'black'
+                                                    ? colors.gris
                                                     : 'white'
                                             }
                                         />

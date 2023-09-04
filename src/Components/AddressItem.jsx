@@ -10,6 +10,12 @@ const AddressItem = ({ location, navigation }) => {
     }
 
     return (
+        <>
+            <Text style={styles.textFirst}>
+                Si desea cambiar su ubicación, haga click en el Icono
+                <Entypo name="location" size={20} color="white"></Entypo>
+            </Text>
+
         <View style={styles.card} onPress={() => {}}>
             <View style={styles.textContainer}>
                 <Text style={styles.text}>
@@ -17,11 +23,13 @@ const AddressItem = ({ location, navigation }) => {
                 </Text>
             </View>
             <Pressable onPress={onChangeLocation}>
-                <Entypo name="location" size={30} color="black">
-                    <Text style={styles.text2}>Change</Text>
+                <Entypo name="location" size={30} color="white">
+                    {/* <Text style={styles.text2}>CAMBIO</Text> */}
                 </Entypo>
             </Pressable>
         </View>
+
+        </>
     );
 };
 
@@ -29,26 +37,33 @@ export default AddressItem;
 
 const styles = StyleSheet.create({
     card: {
-        height: 100,
-        backgroundColor: colors.red,
-        padding: 10,
+        height: 200,
+        width: 350,
+        backgroundColor: colors.blue,
+        padding: 25,
         margin: 10,
-        borderWidth: 2,
-        borderRadius: 10,
-        flexDirection: "row",
-        justifyContent: "space-between",
-        alignItems: "center",
-    },
-    textContainer: {
-        width: "70%",
+        borderRadius: 15,
         flexDirection: "column",
-        justifyContent: "flex-start",
-        alignItems: "flex-start",
+        justifyContent: "space-around",
+        alignItems: "center",
+        right: -15
     },
-    text: {
+    textFirst: {
         fontFamily: "Josefin",
         fontSize: 17,
         color: "black",
+        backgroundColor: "#C5DFF8",
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: '12%',
+        textAlign: 'center',
+        padding: 15
+    },
+    text: {
+        fontFamily: "Josefin",
+        fontSize: 19,
+        color: "white",
+        textAlign: 'center',
     },
     text2: {
         fontFamily: "Josefin",

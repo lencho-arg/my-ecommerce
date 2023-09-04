@@ -7,7 +7,7 @@ import { addCartItem } from "../Features/Cart/cartSlice"
 import { colors } from "../Global/Colors";
 import AddButton from "../Components/AddButton";
 
-
+// import MapView from 'react-native-maps';
 
 const ItemDetail = ({ 
   navigation,
@@ -54,15 +54,19 @@ const ItemDetail = ({
                     <View style = {styles.textContainerCard}>
                       <Text style = {styles.textContainer}>{product.title}</Text>
                       <Text style = {styles.textContainer}>{product.description}</Text>
-                      <Text style = {styles.textContainer}>${product.price}</Text>
-                      
-                      <Pressable
-                        onPress={onAddCart}>
-                        <Text style={styles.btn}>Comprar</Text>
-                      </Pressable>
+                      <Text style = {styles.textContainer}>${product.price}</Text>                    
 
-                      <AddButton title="hola" />
-                            
+                      <View style={styles.button}>
+                        <AddButton 
+                        title="Comprar"
+                        onPress={onAddCart} />
+                      </View>
+                      
+                      {/* <View style={styles.containerMap}>
+                        <MapView style={styles.map} />
+                      </View> */}
+
+
                     </View>
                 </View>
             ) : null}
@@ -74,12 +78,12 @@ export default ItemDetail;
 
 const styles = StyleSheet.create({
   mainContainer: {
-    borderRadius: 50,
+    // borderRadius: 50,
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
-    padding: 60,
-    margin: 7,
+    padding: 67,
+    margin: 5,
     backgroundColor: colors.gris
   },
   mainContainerLandscape: {
@@ -126,5 +130,19 @@ const styles = StyleSheet.create({
         paddingRight: 25,
         marginTop: 5,
         textAlign:'center'
-  }
+  },
+  button: {
+    justifyContent: "center",
+    alignItems: "center",
+    marginTop: 25,
+
+  },
+
+  containerMap: {
+    flex: 1,
+  },
+  map: {
+    width: '100%',
+    height: '100%',
+  },
 });

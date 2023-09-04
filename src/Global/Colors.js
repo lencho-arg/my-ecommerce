@@ -3,5 +3,5 @@ export const colors = {
     claro: '#F5F5F5',
     white: '#EEEEEE',
     celeste: '#4B7BE5',
-    gris: '#FFEAD2'
+    gris: '#C5DFF8'
 }

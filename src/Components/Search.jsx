@@ -20,14 +20,12 @@ const Search = ({
                 onChangeText={setKeyword}
             />
             <Pressable onPress={() => onSearch(keyword)}>
-                <FontAwesome name="search" size={24} color="black" />
+                <FontAwesome name="search" size={24} color={colors.blue}  />
             </Pressable>
             <Pressable onPress={() => setKeyword("")}>
-                <FontAwesome5 name="eraser" size={24} color="black" />
+                <FontAwesome5 name="eraser" size={24} color={colors.celeste} />
             </Pressable>
-            <Pressable onPress={goBack}>
-                <AntDesign name="back" size={24} color="black" />
-            </Pressable>
+
             {error ? <Text>
                 {error}
             </Text> :
@@ -44,7 +42,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         height: '10%',
-        gap: 18,
+        gap: 28,
     },
     input: {
         width: 250,

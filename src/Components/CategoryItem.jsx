@@ -34,11 +34,10 @@ const styles = StyleSheet.create({
     textCategory: {
         fontSize: 20,
         color: colors.white,
-        fontFamily: 'Josefin'
+        fontFamily: 'Josefin',
     },
     border: {
         borderRadius: 25,
-        width: 200,
-
+        width: 150,
     }
 })

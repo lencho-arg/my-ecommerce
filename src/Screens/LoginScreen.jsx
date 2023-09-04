@@ -139,7 +139,7 @@ const styles = StyleSheet.create({
     },
     imageBackground: {
         position: 'absolute',
-        backgroundColor: colors.celeste,
+        // backgroundColor: colors.celeste,
         opacity: 0.9,
         top: -200,
         left: -360,

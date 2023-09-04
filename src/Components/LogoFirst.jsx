@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         width: 350,
         height: 300,
-        // position: 'relative'
+        position: 'relative'
     },
     textBanner: {
         fontSize: 40,

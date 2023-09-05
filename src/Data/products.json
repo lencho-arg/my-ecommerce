@@ -15,9 +15,9 @@
         "id": 2,
         "title": "Tostado",
         "lugar": "Recoleta",
-        "price": 1600,
-        "description": "Cafe con 2 Medialunas",
-        "category": "Merienda",
+        "price": 3100,
+        "description": "Hamburguesa de lentejas",
+        "category": "Almuerzo",
         "images": [
             "https://imgur.com/3FeKjWn.jpg"
         ]
@@ -26,9 +26,9 @@
             "id": 3,
             "title": "Tostado",
             "lugar": "Recoleta",
-            "price": 1600,
-            "description": "Cafe con 2 Medialunas",
-            "category": "Almuerzo",
+            "price": 2900,
+            "description": "Cafe con jugo de pepino",
+            "category": "Aperitivo",
             "images": [
                 "https://imgur.com/3FeKjWn.jpg"
             ]
@@ -45,7 +45,29 @@
     ]
     },
     {
-    "id": 5,
+        "id": 5,
+        "title": "Adorado",
+        "author": "Palermo",
+        "price": 2200,
+        "description": "Aperol",
+        "category": "Aperitivo",
+        "images": [
+            "https://imgur.com/0hlWYbF.jpg"
+        ]
+        },
+        {
+            "id": 6,
+            "title": "Adorado",
+            "author": "Palermo",
+            "price": 3300,
+            "description": "Sandwich de Salmon",
+            "category": "Almuerzo",
+            "images": [
+                "https://imgur.com/0hlWYbF.jpg"
+            ]
+            },
+    {
+    "id": 7,
     "title": "Cafe Tortoni",
     "author": "Congreso",
     "price": 2250,
@@ -55,8 +77,30 @@
         "https://imgur.com/Ua8C8z5.jpg"
     ]
     },
+        {
+            "id": 9,
+            "title": "Cafe Tortoni",
+            "author": "Congreso",
+            "price": 9500,
+            "description": "Aperol, Avocado Toast y CheeseCake",
+            "category": "Brunch",
+            "images": [
+                "https://imgur.com/Ua8C8z5.jpg"
+            ]
+            },
+            {
+                "id": 10,
+                "title": "Cafe Tortoni",
+                "author": "Congreso",
+                "price": 6100,
+                "description": "Entraña",
+                "category": "Cena",
+                "images": [
+                    "https://imgur.com/Ua8C8z5.jpg"
+                ]
+                },
     {
-    "id": 6,
+    "id": 11,
     "title": "Pertutti",
     "author": "Recoleta",
     "price": 1500,
@@ -67,7 +111,29 @@
     ]
     },
     {
-    "id": 7,
+        "id": 12,
+        "title": "Pertutti",
+        "author": "Recoleta",
+        "price": 1500,
+        "description": "Campari",
+        "category": "Aperitivo",
+        "images": [
+            "https://imgur.com/1ngDeA4.jpg"
+        ]
+        },
+        {
+            "id": 13,
+            "title": "Pertutti",
+            "author": "Recoleta",
+            "price": 6200,
+            "description": "Sorrentinos Bolognesa",
+            "category": "Cena",
+            "images": [
+                "https://imgur.com/1ngDeA4.jpg"
+            ]
+            },
+    {
+    "id": 14,
     "title": "El Federal",
     "author": "San Telmo",
     "price": 1150,
@@ -78,7 +144,18 @@
     ]
     },
     {
-    "id": 8,
+        "id": 15,
+        "title": "El Federal",
+        "author": "San Telmo",
+        "price": 2750,
+        "description": "Cafe con leche y Budin",
+        "category": "Merienda",
+        "images": [
+            "https://imgur.com/fdN0OwJ.jpg"
+        ]
+        },
+    {
+    "id": 17,
     "title": "Café Cortazar",
     "author": "Palermo",
     "price": 1150,
@@ -87,5 +164,27 @@
     "images": [
         "https://imgur.com/5vA2nds.jpg"
     ]
-    }
+    },
+    {
+        "id": 18,
+        "title": "Café Cortazar",
+        "author": "Palermo",
+        "price": 7200,
+        "description": "Vino Malbec de la casa",
+        "category": "Aperitivo",
+        "images": [
+            "https://imgur.com/5vA2nds.jpg"
+        ]
+        },
+        {
+            "id": 19,
+            "title": "Café Cortazar",
+            "author": "Palermo",
+            "price": 3600,
+            "description": "Ristreto y Carrotcake",
+            "category": "Merienda",
+            "images": [
+                "https://imgur.com/5vA2nds.jpg"
+            ]
+            }
 ]

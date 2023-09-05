@@ -47,9 +47,7 @@ export const cartSlice = createSlice({
             state.value.items = []
             state.value.total = 0
             state.value.updatedAt = ""
-        },
-
-        
+        }
     }
 })
 

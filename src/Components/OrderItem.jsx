@@ -17,7 +17,7 @@ const OrderItem = ({ order }) => {
                 </Text>
                 <Text style={styles.text2}>${total}</Text>
             </View>
-            <Feather name="search" size={30} color="black" />
+            <Feather name="search" size={30} color={colors.blue} />
         </View>
     );
 };
@@ -27,7 +27,7 @@ export default OrderItem;
 const styles = StyleSheet.create({
     card: {
         height: 100,
-        backgroundColor: colors.peach,
+        backgroundColor: colors.gris,
         padding: 10,
         margin: 10,
         borderWidth: 2,
@@ -50,6 +50,6 @@ const styles = StyleSheet.create({
     text2: {
         fontFamily: "Josefin",
         fontSize: 19,
-        color: "gray",
+        color: colors.celeste,
     },
 });

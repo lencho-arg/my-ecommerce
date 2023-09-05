@@ -3,7 +3,7 @@
     "name": "myecommerce",
     "slug": "myecommerce",
     "version": "1.0.0",
-    // "orientation": "portrait",
+    "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "splash": {
@@ -21,10 +21,16 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.lencho.arg.myecommerce"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "55b61234-779a-42d1-a36b-2faf5a9a80f0"
+      }
     }
   }
 }

@@ -41,10 +41,10 @@ const styles = StyleSheet.create({
         height: 100,
         width: '40%',
         
-        minWidth: 150,
+        minWidth: 125,
         maxWidth: 250,
         borderRadius: 20,
-        right: 15
+        right: 5
 
     },
     additionalStylesCard: {

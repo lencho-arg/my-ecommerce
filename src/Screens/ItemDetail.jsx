@@ -52,7 +52,7 @@ const ItemDetail = ({
                         resizeMode="cover"
                         />
                     <View style = {styles.textContainerCard}>
-                      <Text style = {styles.textContainer}>{product.title}</Text>
+                      <Text style = {styles.textContainer}>{product.title} - {product.lugar}{product.author}</Text>
                       <Text style = {styles.textContainer}>{product.description}</Text>
                       <Text style = {styles.textContainer}>${product.price}</Text>                    
 
@@ -61,11 +61,6 @@ const ItemDetail = ({
                         title="Comprar"
                         onPress={onAddCart} />
                       </View>
-                      
-                      {/* <View style={styles.containerMap}>
-                        <MapView style={styles.map} />
-                      </View> */}
-
 
                     </View>
                 </View>
@@ -78,12 +73,10 @@ export default ItemDetail;
 
 const styles = StyleSheet.create({
   mainContainer: {
-    // borderRadius: 50,
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
-    padding: 67,
-    margin: 5,
+    padding: 40,
     backgroundColor: colors.gris
   },
   mainContainerLandscape: {
@@ -105,7 +98,7 @@ const styles = StyleSheet.create({
   textContainerCard: {
   //     borderColor: colors.celeste,
   //     padding: 15,
-      marginTop: 10,
+      marginTop: 5,
   //     borderRadius: 15,
   //     borderBottomWidth: 3.5,
   //       borderRightWidth: 3.5,
@@ -135,14 +128,5 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     marginTop: 25,
-
-  },
-
-  containerMap: {
-    flex: 1,
-  },
-  map: {
-    width: '100%',
-    height: '100%',
   },
 });

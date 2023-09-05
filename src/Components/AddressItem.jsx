@@ -41,12 +41,12 @@ const styles = StyleSheet.create({
         width: 350,
         backgroundColor: colors.blue,
         padding: 25,
-        margin: 10,
+        margin: 5,
         borderRadius: 15,
         flexDirection: "column",
         justifyContent: "space-around",
         alignItems: "center",
-        right: -15
+        // right: -15
     },
     textFirst: {
         fontFamily: "Josefin",

@@ -85,21 +85,21 @@ const LocationSelector = ({ navigation }) => {
         <View style={styles.container}>
             <Text
                 style = {styles.text}
-            >My Address</Text>
+            >Mi Ubicación</Text>
             {/* Flatlist con las directions */}
             {location ? (
                 <>
-                    <Text 
+                    {/* <Text 
                         style = {styles.text}
                     >Lat: {location.latitude}, long: {location.longitude}.
-                    </Text>
+                    </Text> */}
                     <MapPreview location={location} />
                     <Text style={styles.address}>
-                        Formatted address: {address}
+                        {address}
                     </Text>
                     <AddButton
                         onPress={onConfirmAddress}
-                        title="Confirm address"
+                        title="Confirmar Dirección"
                     />
                 </>
             ) : (

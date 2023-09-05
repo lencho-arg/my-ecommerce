@@ -26,19 +26,19 @@ const CartItem = ({ cartItem }) => {
                             style={styles.image}
                             resizeMode="cover"
                         />
-
-                    
                     </View>
                 </View>
 
-                <Text style={styles.text}>{cartItem.title} ({cartItem.quantity})</Text>
-                <Text style={styles.text2}>{cartItem.brand}</Text>
-                <Text style={styles.text2}>${cartItem.price}</Text>
+                <View style={styles.containerText}>
+                    <Text style={styles.text}>{cartItem.title} ({cartItem.quantity})</Text>
+                    <Text style={styles.text2}>{cartItem.description}</Text>
+                    <Text style={styles.text2}>${cartItem.price}</Text>
+                </View>
+
             </View>
+
             <Pressable onPress={onRemoveCartItem}>
                 <Fontisto name="trash" size={30} color='#4B7BE5' />
-                {/* <Entypo name="trash" size={30} color="black" /> */}
-                {/* <Ionicons name="trash-bin-outline" size={24} color="black" /> */}
             </ Pressable>
             
 
@@ -62,7 +62,12 @@ const styles = StyleSheet.create({
     },
     textContainer: {
 
-        width: "70%",
+        width: "80%",
+        flexDirection: "column",
+        justifyContent: "flex-end",
+        alignItems: "flex-end",
+    },
+    containerText: {
         flexDirection: "column",
         justifyContent: "flex-end",
         alignItems: "flex-end",
@@ -70,20 +75,21 @@ const styles = StyleSheet.create({
     text: {
 
         fontFamily: "Josefin",
-        fontSize: 19,
+        fontSize: 17,
         color: colors.celeste,
     },
     text2: {
         fontFamily: "Josefin",
-        fontSize: 16,
+        fontSize: 12,
 
     },
     containerImages: {
         width: "100%",
         position: 'absolute',
-        padding: 2,
         borderRadius: 15,
-        top: -5
+        top: -8,
+        alignItems: "flex-start",
+
     },
     image: {
         width: 110,

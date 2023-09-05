@@ -32,12 +32,13 @@ export default CategoryItem
 
 const styles = StyleSheet.create({
     textCategory: {
-        fontSize: 20,
+        fontSize: 15,
         color: colors.white,
         fontFamily: 'Josefin',
     },
     border: {
-        borderRadius: 25,
+        borderRadius: 15,
         width: 150,
+        marginHorizontal: 10
     }
 })

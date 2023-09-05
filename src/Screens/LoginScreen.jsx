@@ -83,7 +83,7 @@ const LoginScreen = ({ navigation }) => {
         </View>
 
             <View style={styles.container}>
-                <Text style={styles.title}>Login to start</Text>
+                <Text style={styles.title}>Logueate</Text>
                 <InputForm
                     label={"email"}
                     onChange={(email) => setEmail(email)}
@@ -95,8 +95,8 @@ const LoginScreen = ({ navigation }) => {
                     error={errorPassword}
                     isSecure={true}
                 />
-                <SubmitButton onPress={onSubmit} title="Send" />
-                <Text style={styles.sub}>Not have an account?</Text>
+                <SubmitButton onPress={onSubmit} title="Entrar" />
+                <Text style={styles.sub}>No tenes un cuenta?</Text>
                 <Pressable onPress={() => navigation.navigate("Signup")}>
                     <Text style={styles.subLink}>Sign up</Text>
                 </Pressable>
@@ -141,7 +141,7 @@ const styles = StyleSheet.create({
         position: 'absolute',
         // backgroundColor: colors.celeste,
         opacity: 0.9,
-        top: -200,
+        top: -190,
         left: -360,
         width: 750,
         height: 740,

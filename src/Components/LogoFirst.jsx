@@ -9,10 +9,10 @@ const LogoFirst = ({
 
 
   return (
-    <View style={styles.containerBanner}>
+    <View>
       
-          <View style={styles.containerBannerImage}>
-            <Text style={styles.textBanner}>
+          <View style={styles.containerLogoImage}>
+            <Text style={styles.textLogo}>
               BAmos Foodie
             </Text>
             
@@ -31,30 +31,30 @@ export default LogoFirst;
 
 const styles = StyleSheet.create({
 
-    containerBannerImage: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        padding: 20,
-        justifyContent: 'center',
-        width: 350,
-        height: 300,
-        position: 'relative'
-    },
-    textBanner: {
-        fontSize: 40,
-        padding: 10,
-        color: colors.celeste,
-        fontFamily: 'Josefin',
-        position: 'absolute',
-        zIndex: 2,
-        left: 50,
-        opacity: 0.8,
-        textAlign: 'center',
-        backgroundColor: "white"
-    },
-    image: {
-        width: 950,
-        height: 450,
-        zIndex: 1,
-    }
+  containerLogoImage: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    padding: 20,
+    justifyContent: 'center',
+    width: 350,
+    height: 300,
+    position: 'relative'
+  },
+  textLogo: {
+    fontSize: 40,
+    borderRadius:15,
+    padding: 10,
+    color: colors.celeste,
+    fontFamily: 'Josefin',
+    position: 'absolute',
+    zIndex: 2,
+    opacity: 0.8,
+    textAlign: 'center',
+    backgroundColor: "white"
+  },
+  image: {
+      width: 950,
+      height: 450,
+      zIndex: 1,
+  }
 })

@@ -19,14 +19,14 @@ const Home = ({
                     navigation={navigation}
             />
 
-
                 <FlatList
                     data = {categories}
                     numColumns={2}
                     keyExtractor={category => category}
                     renderItem={({item}) => <CategoryItem item={item} navigation = {navigation}/>}
-                    ItemSeparatorComponent={() => <View style={{marginVertical:5}} />}
+                    ItemSeparatorComponent={() => <View style={{marginTop:-15}} />}
                     style={styles.flatlist}
+
                 />
            
         </View>
@@ -40,5 +40,9 @@ const styles = StyleSheet.create({
     container: {
         // backgroundColor: colors.gris,
         alignItems: 'center',
+
+    },
+    flatlist: {
+        marginTop: 70
     }
 })

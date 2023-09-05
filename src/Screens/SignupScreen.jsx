@@ -88,10 +88,10 @@ const SignupScreen = ({ navigation }) => {
                     error={errorConfirmPassword}
                     isSecure={true}
                 />
-                <SubmitButton onPress={onSubmit} title="Send" />
-                <Text style={styles.sub}>Already have an account?</Text>
+                <SubmitButton onPress={onSubmit} title="Enviar" />
+                <Text style={styles.sub}>Ya tenes una cuenta?</Text>
                 <Pressable onPress={() => navigation.navigate("Login")}>
-                    <Text style={styles.subLink}>Login</Text>
+                    <Text style={styles.subLink}>Logueate</Text>
                 </Pressable>
             </View>
         </View>
@@ -136,7 +136,7 @@ const styles = StyleSheet.create({
         position: 'absolute',
         // backgroundColor: colors.celeste,
         opacity: 0.9,
-        top: -200,
+        top: -150,
         left: -360,
         width: 750,
         height: 740,
